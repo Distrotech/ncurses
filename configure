@@ -5158,8 +5158,8 @@ EOF
 
 		SHLIB_LIST="-ldl $SHLIB_LIST"
 	else
-		SHLIB_LIST="-ldl -lgpm $SHLIB_LIST"
-		TEST_LIBS="-ldl -lgpm $TEST_LIBS"
+		SHLIB_LIST="-lgpm $SHLIB_LIST"
+		TEST_LIBS="-lgpm $TEST_LIBS"
 	fi
 	cat >>confdefs.h <<\EOF
 #define HAVE_LIBGPM 1
@@ -18597,14 +18597,14 @@ if test "$srcdir" != "."; then
 	CPPFLAGS="$CPPFLAGS -I\${srcdir}/../include"
 fi
 if test "$GCC" != yes; then
-	CPPFLAGS="$CPPFLAGS"
+	CPPFLAGS="$CPPFLAGS -I\${includedir}"
 elif test "$includedir" != "/usr/include"; then
 	if test "$includedir" = '${prefix}/include' ; then
 		if test $prefix != /usr ; then
-			CPPFLAGS="$CPPFLAGS"
+			CPPFLAGS="$CPPFLAGS -I\${includedir}"
 		fi
 	else
-		CPPFLAGS="$CPPFLAGS"
+		CPPFLAGS="$CPPFLAGS -I\${includedir}"
 	fi
 fi
 
@@ -18613,14 +18613,14 @@ if test "$srcdir" != "."; then
 	ACPPFLAGS="-I\${srcdir}/../../include $ACPPFLAGS"
 fi
 if test "$GCC" != yes; then
-	ACPPFLAGS="$ACPPFLAGS"
+	ACPPFLAGS="$ACPPFLAGS -I\${includedir}"
 elif test "$includedir" != "/usr/include"; then
 	if test "$includedir" = '${prefix}/include' ; then
 		if test $prefix != /usr ; then
-			ACPPFLAGS="$ACPPFLAGS"
+			ACPPFLAGS="$ACPPFLAGS -I\${includedir}"
 		fi
 	else
-		ACPPFLAGS="$ACPPFLAGS"
+		ACPPFLAGS="$ACPPFLAGS -I\${includedir}"
 	fi
 fi
 
