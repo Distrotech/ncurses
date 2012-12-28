@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ -e ${3}/usr/${B_LIBDIRS}/libncurses.so ] && [ ! -e ${3}/usr/${B_LIBDIRS}/libcurses.so ];then
+  ln -s libncurses.so ${3}/usr/${B_LIBDIRS}/libcurses.so
+fi;
+
+if [ -e ${3}/usr/${B_LIBDIRS}/libncurses.a ] && [ ! -e ${3}/usr/${B_LIBDIRS}/libcurses.a ];then
+  ln -s libncurses.a ${3}/usr/${B_LIBDIRS}/libcurses.a
+fi;
+
+#if [ -e ${3}/usr/${B_LIBDIRS}/libncurses.so ];then
+#  ln -s libncurses.so ${3}/usr/${B_LIBDIRS}/libtinfo.so
+#fi;
+
+#if [ -e ${3}/usr/${B_LIBDIRS}/libncursesw.so ];then
+#  ln -s libncursesw.so ${3}/usr/${B_LIBDIRS}/libtinfow.so
+#fi;
