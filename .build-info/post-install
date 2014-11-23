@@ -15,3 +15,7 @@ fi;
 #if [ -e ${3}/usr/${B_LIBDIRS}/libncursesw.so ];then
 #  ln -s libncursesw.so ${3}/usr/${B_LIBDIRS}/libtinfow.so
 #fi;
+
+if [ ! -e ${3}/usr/include/ncurses ];then
+  ln -s -r ${3}/usr/include ${3}/usr/include/ncursesw
+fi;
